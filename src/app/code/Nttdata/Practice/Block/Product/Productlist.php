@@ -1,4 +1,5 @@
 <?php
+
 namespace Nttdata\Practice\Block\Product;
 
 class Productlist extends \Magento\Framework\View\Element\Template
@@ -11,8 +12,7 @@ class Productlist extends \Magento\Framework\View\Element\Template
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
-    )
-    {
+    ){
         $this->_productCollectionFactory = $productCollectionFactory;
         parent::__construct($context);
     }

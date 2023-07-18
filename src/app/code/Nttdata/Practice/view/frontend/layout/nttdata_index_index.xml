@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <head>
+        <css src="Nttdata_Practice/css/test.css" />
+        <script src="Nttdata_Practice/js/test.js" />
+    </head>
+
     <referenceContainer name="content">
         <block class="Nttdata\Practice\Block\Index\Index" name="practice_index_index" template="Nttdata_Practice::index.phtml" />
     </referenceContainer>

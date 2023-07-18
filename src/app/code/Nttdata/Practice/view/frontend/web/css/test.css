@@ -1,0 +1,20 @@
+.container-productlist, .container-headers , .container-products{
+    margin: 1vh;
+    padding: 1vh;
+    border: 4px dashed;
+}
+
+.container-productlist {
+    border-color: #1e80ff;
+    color: #1e80ff;
+}
+
+.container-headers {
+    border-color: #d01515;
+    color: #d01515;
+}
+
+.container-products {
+    border-color: #5b8116;
+    color: #5b8116;
+}

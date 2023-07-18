@@ -1,2 +1,0 @@
-# PracticeMagentoBootcamp
-# Bootcamp-MagentoPractice

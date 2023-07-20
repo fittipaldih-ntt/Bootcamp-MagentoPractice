@@ -26,6 +26,10 @@
             </container>
 
         </referenceContainer>
+
+        <block class="Nttdata\Practice\Block\Time\Hour" name="nttdata_time_hour" 
+            template="Nttdata_Practice::time/hour.phtml" />
+
     </referenceContainer>
 
 </page>

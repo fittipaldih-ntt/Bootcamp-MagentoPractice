@@ -4,7 +4,7 @@ namespace Nttdata\Practice\Block\Product;
 
 class Productlist extends \Magento\Framework\View\Element\Template
 {
-    /**
+    /*
      * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
      */
     protected $_productCollectionFactory;

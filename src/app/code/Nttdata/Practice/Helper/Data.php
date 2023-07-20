@@ -1,22 +1,27 @@
 <?php
 
 namespace Nttdata\Practice\Helper;
+
 use \Magento\Framework\App\Helper\AbstractHelper;
 
 class Data extends AbstractHelper
 {
-    private Data $helper;
+    public function __construct(
+        \Magento\Framework\App\Helper\Context $context
+    )
+    {
+        parent::__construct($context);
+    }
 
-    public function __construct(Data $helper)
+    public function getTranslateStringAndTime()
     {
-        $this->helper = $helper;
+        return __("Now being the %1, I am learning translations", $this->getCurrentTime());
     }
-    public function newFunction()
+
+    private function getCurrentTime()
     {
-        $this->helper->getStoreConfig();
-    }
-    public function getStoreConfig()
-    {
-        return true;
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
+        $hour = date('H:i:s');
+        return $hour;
     }
 }

@@ -10,6 +10,6 @@ class Index extends \Magento\Framework\View\Element\Template
 
     public function welcome()
     {
-        return __('¡Bienvenido al Primer módulo (Practice) de NTT Data!');
+        return '¡Bienvenido al Primer módulo (Practice) de NTT Data!';
     }
 }

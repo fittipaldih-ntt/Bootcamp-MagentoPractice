@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="catalog" translate="label" sortOrder="110">
+            <label>Catalog</label>
+        </tab>
+        <section id="nttdata_practice" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Practice</label>
+            <tab>catalog</tab>
+            <resource>Nttdata_Practice::nttdata_practice</resource>
+            <group id="params" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Test</label>
+
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Estado</label>
+                    <source_model>Nttdata\Practice\Model\Config\Source\EnableDisable</source_model>
+                    <comment>Activar o desactivar configuración</comment>
+                </field>
+
+                <field id="order_field" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ordenar por</label>
+                    <source_model>Nttdata\Practice\Model\Config\Source\OrderField</source_model>
+                    <comment>Seleccionar orden a aplicar (color, talle, nombre)</comment>
+                </field>
+
+                <field id="order_direction" translate="label" type="select" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ordenar de forma</label>
+                    <source_model>Nttdata\Practice\Model\Config\Source\OrderDirection</source_model>
+                    <comment>Seleccionar orden a mostrar (Ascendente o descendente)</comment>
+                </field>
+
+                <field id="limit" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Limite</label>
+                    <comment>Ingresar el límite de productos en números (1 a 100)</comment>
+                    <!-- <validate> validate-number validate-digits-range digits-range-1-100 </validate> -->
+                    <backend_model>Nttdata\Practice\Model\Config\Source\Limit</backend_model>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

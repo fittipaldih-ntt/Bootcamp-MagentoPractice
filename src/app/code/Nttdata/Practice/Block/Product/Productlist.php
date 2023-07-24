@@ -2,27 +2,44 @@
 
 namespace Nttdata\Practice\Block\Product;
 
+use Magento\Framework\View\Element\Template\Context;
+use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
+use Nttdata\Practice\Helper\Data;
+
 class Productlist extends \Magento\Framework\View\Element\Template
 {
-    /*
-     * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
-     */
-    protected $_productCollectionFactory;
+    protected $productCollectionFactory;
+    public $helper;
 
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
-    ){
-        $this->_productCollectionFactory = $productCollectionFactory;
+        Context $context,
+        CollectionFactory $productCollectionFactory,
+        Data $helper
+    ) {
+        $this->productCollectionFactory = $productCollectionFactory;
+        $this->helper = $helper;
         parent::__construct($context);
     }
 
-    public function getProductCollectionByNameOrderDesc()
+    public function getCollection()
     {
-        $collection = $this->_productCollectionFactory->create();
+        $isEnabled = $this->helper->getEnabled();
+
+        if (!$isEnabled) {
+            echo '<h2>La configuración está apagada</h2>';;
+            return null;
+        }
+
+        $limit = $this->helper->getLimit();
+        $orderField = $this->helper->getOrderField();
+        $orderDirection = $this->helper->getOrderDirection();
+
+        $collection = $this->productCollectionFactory->create();
         $collection->addAttributeToSelect('*');
-        $collection->setPageSize(10);
-        $collection->setOrder('name', 'desc');
+        $collection->setPageSize($limit);
+        $collection->setOrder($orderField, $orderDirection);
+
         return $collection;
     }
+
 }

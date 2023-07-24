@@ -2,12 +2,17 @@
 
 namespace Nttdata\Practice\Block\Product\List;
 
+use Magento\Backend\Block\Template\Context;
+use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
+use Nttdata\Practice\Helper\Data;
+
 class Products extends \Nttdata\Practice\Block\Product\Productlist
 {
     public function __construct(
-        \Magento\Backend\Block\Template\Context $context,
-        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
-    ){
-        parent::__construct($context, $productCollectionFactory);
+        Context $context,
+        CollectionFactory $productCollectionFactory,
+        Data $helper
+    ) {
+        parent::__construct($context, $productCollectionFactory, $helper);
     }
 }

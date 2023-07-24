@@ -1,27 +1,28 @@
-<!--
-<h2>Productos ordenados por nombre descendentemente (Limite 10 productos)</h2>
+<?php
+$blockClass = get_class($block);
+echo '<h3>' . $blockClass . '</h3>';
+
+$categoryProducts = $block->getCollection();
+if ($categoryProducts != null) {
+?>
+
 <table>
     <tr>
         <th>Id</th>
         <th>Nombre</th>
         <th>ImagePath</th>
+        <th>Precio</th>
     </tr>
     <?php
-    $categoryProducts = $block->getProductCollectionByNameOrderDesc();
-    foreach ($categoryProducts as $product) {
-        echo '<tr>
+
+        foreach ($categoryProducts as $product) {
+            echo '<tr>
             <td>' . $product->getId() . '</td>
             <td>' . $product->getName() . '</td>
             <td>' . $product->getImage() . '</td>
+            <td>' . $product->getPrice() . '</td>
         </tr>';
+        }
     }
     ?>
 </table>
--->
-
-<?php
-$blockClass = get_class($block);
-echo '<h3>' . $blockClass . '</h3>';
-?>
-
-

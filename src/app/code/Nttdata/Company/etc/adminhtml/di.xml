@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+<type name="Nttdata\Company\Model\ResourceModel\Employee\Collection">
+    <arguments>
+        <argument name="mainTable" xsi:type="string">nttdata_company_employee</argument>
+
+        <argument name="resourceModel" xsi:type="string">Nttdata\Company\Model\ResourceModel\Employee</argument>
+    </arguments>
+</type>
+
+<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <arguments>
+        <argument name="collectionFactory" xsi:type="array">
+            <item name="company_management_employees_data_source" xsi:type="string">EmployeesDataProvider</item>
+        </argument>
+    </arguments>
+</type>
+
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Nttdata_Company::company" title="Company" translate="title" module="Nttdata_Company"
+            sortOrder="10" dependsOnModule="Nttdata_Company"
+             resource="Nttdata_Company::company"/>
+
+        <add id="Nttdata_Company::employees_management" title="Employee Management" translate="title"
+             module="Nttdata_Company" parent="Nttdata_Company::company" sortOrder="10"
+             dependsOnModule="Nttdata_Company" action="company/management"
+             resource="Nttdata_Company::company"/>
+    </menu>
+</config>

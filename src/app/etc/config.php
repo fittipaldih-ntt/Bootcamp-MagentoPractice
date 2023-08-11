@@ -347,6 +347,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
         'Nttdata_Company' => 1,
+        'Nttdata_Pokeapi' => 1,
         'Nttdata_Practice' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,

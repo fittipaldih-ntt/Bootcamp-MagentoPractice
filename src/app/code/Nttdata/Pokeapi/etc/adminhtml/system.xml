@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pokeapi" translate="label" sortOrder="10">
+            <label>Pokeapi</label>
+        </tab>
+        <section id="nttdata_pokemon" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Configuration</label>
+            <tab>pokeapi</tab>
+            <resource>Nttdata_Pokeapi::nttdata_pokeapi</resource>
+            <group id="paramers" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>PokeAPI - Configuration</label>
+                
+                <field id="url" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>URL API</label>
+                    <comment>Ingresar una URL valida</comment>
+                    <validate>required-entry no-whitespace</validate>
+                </field>
+
+                <field id="endpoint" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Endpoint</label>
+                    <comment>Ingresar un endpoint valido</comment>
+                    <validate>no-whitespace</validate>
+                </field>
+
+                <!--<field id="limits" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Limite</label>
+                    <comment>Ingresar el límite de pokemon(es) en números (1 a 151)</comment>
+                    <validate>required-entry validate-number validate-digits-range digits-range-1-151 </validate>
+                </field>
+                 -->
+                <field id="range_from" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>ID Desde</label>
+                    <comment>Ingresar el ID desde el cual comenzar a mostrar pokemones</comment>
+                    <validate>required-entry validate-number validate-digits-range digits-range-1-151 </validate>
+                </field>
+                
+                <field id="range_to" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>ID Hasta</label>
+                    <comment>Ingresar el ID hasta el cual mostrar pokemones</comment>
+                    <validate>required-entry validate-number validate-digits-range digits-range-1-151 </validate>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

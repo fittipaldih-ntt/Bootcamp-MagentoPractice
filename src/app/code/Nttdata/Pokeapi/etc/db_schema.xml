@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="nttdata_pokeapi_pokemon" resource="default" engine="innodb" comment="Pokemon Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Pokemon id"/>
+        <column xsi:type="varchar" name="name" nullable="false" comment="Pokemon name"/>
+        <column xsi:type="varchar" name="image" comment="Pokemon image"/>
+        <column xsi:type="varchar" name="types" comment="Pokemon type"/>
+        <column xsi:type="varchar" name="generations" comment="Pokemon generation"/>
+        <column xsi:type="varchar" name="regions" comment="Pokemon region"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        </table>
+</schema>

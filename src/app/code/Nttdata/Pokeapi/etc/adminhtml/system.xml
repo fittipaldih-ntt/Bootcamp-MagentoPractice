@@ -23,13 +23,7 @@
                     <comment>Ingresar un endpoint valido</comment>
                     <validate>no-whitespace</validate>
                 </field>
-
-                <!--<field id="limits" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Limite</label>
-                    <comment>Ingresar el límite de pokemon(es) en números (1 a 151)</comment>
-                    <validate>required-entry validate-number validate-digits-range digits-range-1-151 </validate>
-                </field>
-                 -->
+                 
                 <field id="range_from" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>ID Desde</label>
                     <comment>Ingresar el ID desde el cual comenzar a mostrar pokemones</comment>

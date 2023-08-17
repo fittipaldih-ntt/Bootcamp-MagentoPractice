@@ -19,7 +19,7 @@ class Pokemonlist extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $pageFactory = $this->_pageFactory->create();
-        $pageFactory->getConfig()->getTitle()->set(__('Pokémon API'));
+        $pageFactory->getConfig()->getTitle()->set('Pokémon API');
         return $pageFactory;
     }
 }

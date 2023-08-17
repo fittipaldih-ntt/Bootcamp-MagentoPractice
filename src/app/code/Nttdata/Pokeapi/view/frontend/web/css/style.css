@@ -1,7 +1,8 @@
-.page-title-wrapper{
+.page-title-wrapper {
     text-align: center;
 }
-.page-title{
+
+.page-title {
     font-weight: bold;
 }
 
@@ -28,9 +29,10 @@
     text-align: center;
 }
 
-.click-title{ 
+.click-title {
     cursor: pointer;
 }
+
 .pokemon-card h3 {
     font-size: 18px;
     font-weight: bold;
@@ -52,6 +54,7 @@
     text-decoration: underline;
     margin-top: 5px;
 }
+
 .generation-list li {
     margin-bottom: 5px;
 }

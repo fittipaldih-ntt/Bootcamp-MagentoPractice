@@ -46,11 +46,6 @@ class Data extends AbstractHelper
         return $this->getConfig(self::ROUTE_SYSTEM . 'url');
     }
 
-    public function getLimit()
-    {
-        return $this->getConfig(self::ROUTE_SYSTEM . 'limits');
-    }
-
     public function getEndpoint()
     {
         return $this->getConfig(self::ROUTE_SYSTEM . 'endpoint');

@@ -17,10 +17,6 @@ class ApiService
      * @var ResponseFactory
      */
     private $responseFactory;
-
-    /**
-     * @var ClientFactory
-     */
     private $clientFactory;
 
     /**
@@ -67,7 +63,6 @@ class ApiService
                 'reason' => $exception->getMessage()
             ]);
         }
-
         return $response;
     }
 }

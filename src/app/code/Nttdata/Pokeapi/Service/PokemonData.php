@@ -19,15 +19,12 @@ class PokemonData{
         $this->helper = $helper;
     }
 
-    public function getPokemonList($limit = 60): array
+    public function getPokemonList($limit = 50): array
     // Me trae la lista de todos los pokemones, Name y URL con atributos
     // Le paso limit harcodeado para evitar que tarde tanto en cargar a todos
     {
         $url = $this->helper->getUrl();
         $endp = $this->helper->getEndpoint();
-        // esto era para limitar los pokes y verificar limit
-        // $limit = $this->helper->getLimit();
-        // $this->verifyLimitParameter($url . $endp , $limit);
         $finallyUrl = $url . $endp . '/' . '?limit=' . $limit;
         $response = $this->apiService->doRequest($finallyUrl);
         $responseContent = $response->getBody()->getContents();
@@ -51,11 +48,11 @@ class PokemonData{
         return $pokemonFullData;
     }
 
-    public function getPokemonSelectedData($limit = null)
+    public function getPokemonSelectedData()
     // Me trae toda la data que necesito de todos los pokemones (incluyendo el nombre que esta en el primer JSON)
     // OJO que antes de devolverlo los filtra por los seleccionados
     {
-        $names = $this->getPokemonName($limit);
+        $names = $this->getPokemonName();
         $data = $this->getPokemonFullData();
         $images = $this->getPokemonImages($data);
         $types = $this->getPokemonTypes($data);
@@ -86,20 +83,18 @@ class PokemonData{
                 ];
             }
         }
-
         return $pokemon;
     }
 
-    public function getPokemonName($limit = null): array
+    public function getPokemonName(): array
     // Me trae del primer API, solo NOMBRES
     {
-        $pokemonList = $this->getPokemonList($limit);
+        $pokemonList = $this->getPokemonList();
 
         $pokemonName = [];
         foreach ($pokemonList['results'] as $pokemon) {
             $pokemonName[] = $pokemon['name'];
         }
-
         return $pokemonName;
     }
 
@@ -107,12 +102,11 @@ class PokemonData{
     // Me trae del primer API, solo URL con atributos
     {
         $pokemonList = $this->getPokemonList();
-
         $pokemonUrls = [];
+
         foreach ($pokemonList['results'] as $pokemon) {
             $pokemonUrls[] = $pokemon['url'];
         }
-
         return $pokemonUrls;
     }
 
@@ -123,7 +117,6 @@ class PokemonData{
         foreach ($data as $item) {
             $images[] = $item['sprites']['other']['official-artwork']['front_default'];
         }
-
         return $images;
     }
 
@@ -134,7 +127,6 @@ class PokemonData{
         foreach ($data as $item) {
             $ids[] = $item['id'];
         }
-
         return $ids;
     }
 
@@ -156,7 +148,6 @@ class PokemonData{
         foreach ($data as $item) {
             $generations[] = $item['sprites']['versions'];
         }
-
         return $generations;
     }
 
@@ -174,34 +165,8 @@ class PokemonData{
                     $regions[] = $encounter['location_area']['name'];
                 }
             }
-
             $regionsList[] = $regions;
         }
-
         return $regionsList;
     }
-
-    /*
-    private function verifyLimitParameter(string $url, int $limit): string
-    // Verificamos si la URL ya contiene el LIMIT
-    {
-        if (strpos($url, 'limit=') === false) {
-            return $this->addLimitParameter($url, $limit);
-        } else {
-            return $this->replaceLimitParameter($url, $limit);
-        }
-    }
-
-    private function addLimitParameter(string $url, int $limit): string
-    // Si no lo contiene, se lo agregamos 
-    {
-        return (strpos($url, '?') !== false) ? $url . '&' . 'limit=' . $limit : $url . '?' . 'limit=' . $limit;
-    }
-
-    private function replaceLimitParameter(string $url, int $limit): string
-    // Si ya lo contiene, lo reemplazamos por el elegido en la configuracion
-    {
-        return preg_replace('/limit=\d+/', 'limit=' . $limit, $url);
-    }
-    */
 }

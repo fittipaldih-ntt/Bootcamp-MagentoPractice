@@ -3,7 +3,6 @@
         <nttdata_pokeapi>
             <paramers>
                 <url>https://pokeapi.co/api/v2/</url>
-                <limits>151</limits>
                 <endpoint>pokemon</endpoint>
                 <range_from>1</range_from>
                 <range_to>151</range_to>

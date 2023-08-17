@@ -29,27 +29,47 @@ class SavePokemon
     public function execute()
     {
         try {
-            $limit = 50;
-            $pokemonArray = $this->pokemonData->getPokemonSelectedData($limit);
+            $pokemonArray = $this->pokemonData->getPokemonSelectedData();
             $firstTypes = $this->getFirstPokemonTypes($pokemonArray);
+            $existingPokemonIds = $this->getExistingPokemonNames();
+            $loadedCount = $this->processNewPokemon($pokemonArray, $firstTypes, $existingPokemonIds);
 
-            foreach ($pokemonArray as $index => $pokemon) {
-
-                $model = $this->pokemonFactory->create();
-                $namesOfGenerations =  array_keys($pokemon['generations']);
-
-                $model->setData('name', $pokemon['name']);
-                $model->setData('image', $pokemon['image']);
-                $model->setData('types', $firstTypes[$index]['name']);
-                $model->setData('generations', end( $namesOfGenerations));
-                $model->setData('regions', end($pokemon['regions']));
-
-                $model->save();
-            }
-            $this->logger->info('Pokemon saved successfully.');
+            $this->logger->info($loadedCount . ' Pokémon saved successfully.');
         } catch (\Exception $e) {
-            $this->logger->error('Error saving pokemon: ' . $e->getMessage());
+            $this->logger->error('Error saving Pokémon: ' . $e->getMessage());
         }
+    }
+
+    protected function processNewPokemon($pokemonArray, $firstTypes, $existingPokemonIds)
+    {
+        $loadedCount = 0;
+
+        foreach ($pokemonArray as $index => $pokemon) {
+            if ($loadedCount >= 50) {
+                break;
+            }
+
+            if (!in_array($pokemon['id'], $existingPokemonIds)) {
+                $this->savePokemon($pokemon, $firstTypes[$index]);
+                $loadedCount++;
+            }
+        }
+
+        return $loadedCount;
+    }
+
+    protected function savePokemon($pokemon, $type)
+    {
+        $model = $this->pokemonFactory->create();
+        $namesOfGenerations = array_keys($pokemon['generations']);
+
+        $model->setData('name', $pokemon['name']);
+        $model->setData('image', $pokemon['image']);
+        $model->setData('types', $type['name']);
+        $model->setData('generations', end($namesOfGenerations));
+        $model->setData('regions', end($pokemon['regions']));
+
+        $model->save();
     }
 
     protected function getFirstPokemonTypes($pokemonArray)
@@ -64,4 +84,9 @@ class SavePokemon
         return $types;
     }
 
+    protected function getExistingPokemonNames()
+    {
+        // Me fijo los pokemones ya cargados para evitar que se dupliquen en la BD
+        return $this->pokemonCollection->getColumnValues('name');
+    }
 }

@@ -6,7 +6,7 @@ use Nttdata\Company\Model\ResourceModel\Employee\CollectionFactory;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use Magento\Backend\App\Action\Context as ActionContext;
 
-class EmployeesDataProvider extends AbstractDataProvider
+class EmployeesIndexDataProvider extends AbstractDataProvider
 {
     /**
      * @var CollectionFactory

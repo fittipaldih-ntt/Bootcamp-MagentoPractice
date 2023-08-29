@@ -1,10 +1,12 @@
 <?php
+
 namespace Nttdata\Company\Model;
 
 use Magento\Framework\Model\AbstractModel;
 
 class Employee extends AbstractModel
 {
+
     protected function _construct()
     {
         $this->_init(\Nttdata\Company\Model\ResourceModel\Employee::class);
@@ -14,7 +16,7 @@ class Employee extends AbstractModel
     {
         return $this->_getData($this->_idFieldName);
     }
-    
+
     public function save()
     {
         $this->_getResource()->save($this);
@@ -28,7 +30,7 @@ class Employee extends AbstractModel
      */
     public function calculateAge()
     {
-        $birthDate = $this->getData('birthDate');
+        $birthDate = $this->getData('birthdate');
         if (empty($birthDate)) {
             return null;
         }
@@ -40,4 +42,5 @@ class Employee extends AbstractModel
 
         return $age;
     }
+
 }

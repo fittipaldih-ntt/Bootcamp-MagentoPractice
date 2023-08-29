@@ -1,11 +1,11 @@
 <?php
 
-namespace Nttdata\Company\Model\Grid;
+namespace Nttdata\Company\Ui\DataProvider;
 
 use Nttdata\Company\Model\ResourceModel\Employee\Collection;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 
-class EditEmployeeDataProvider extends AbstractDataProvider
+class EmployeeEditDataProvider extends AbstractDataProvider
 {
     protected $collection;
 

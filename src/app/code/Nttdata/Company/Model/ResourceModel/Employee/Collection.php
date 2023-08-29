@@ -24,18 +24,28 @@ class Collection extends AbstractCollection
 
         $this->getSelect()->joinLeft(
             ['sector' => $this->getTable('nttdata_company_sector_employee')],
-            'main_table.id_sectorEmployee = sector.id',
-            ['sector_description' => 'description'] 
+            'main_table.idsector = sector.id',
+            ['sectordescription' => 'description'] 
         );
 
         $this->getSelect()->joinLeft(
             ['type' => $this->getTable('nttdata_company_type_employee')],
-            'main_table.id_typeEmployee = type.id',
-            ['type_description' => 'description']
+            'main_table.idtype = type.id',
+            ['typedescription' => 'description']
         );
+
+        $this->getSelect()->joinLeft(
+            ['socialwork' => $this->getTable('nttdata_company_socialwork_employee')],
+            'main_table.idsocialwork = socialwork.id',
+            ['socialworkdescription' => 'description',
+            'socialworkplan' => 'plan' ]
+        );
+
         $this->addFilterToMap('id', 'main_table.id');
-        $this->addFilterToMap('sector_description', 'sector.description');
-        $this->addFilterToMap('type_description', 'type.description');
+        $this->addFilterToMap('sectordescription', 'sector.description');
+        $this->addFilterToMap('typedescription', 'type.description');
+        $this->addFilterToMap('socialworkdescription', 'socialwork.description');
+        $this->addFilterToMap('socialworkplan', 'socialwork.plan');
     }
     
 }

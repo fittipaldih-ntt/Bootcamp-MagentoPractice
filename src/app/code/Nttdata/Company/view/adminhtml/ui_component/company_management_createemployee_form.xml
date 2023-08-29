@@ -31,7 +31,7 @@
             <submitUrl path="*/*/saveemployee" />
         </settings>
         <dataProvider name="company_management_createemployee_form_data_source"
-            class="Nttdata\Company\Model\Grid\EditEmployeeDataProvider">
+            class="Nttdata\Company\Ui\DataProvider\EmployeeEditDataProvider">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>id</primaryFieldName>
@@ -73,14 +73,14 @@
                 </item>
             </argument>
         </field>
-        <field name="lastName">
+        <field name="lastname">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Last Name</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">employee</item>
-                    <item name="dataScope" xsi:type="string">lastName</item>
+                    <item name="dataScope" xsi:type="string">lastname</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                         <item name="letters" xsi:type="boolean">true</item>
@@ -88,35 +88,77 @@
                 </item>
             </argument>
         </field>
-        <field name="birthDate">
+        <field name="birthdate">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">date</item>
                     <item name="label" xsi:type="string" translate="true">Birth Date</item>
                     <item name="formElement" xsi:type="string">date</item>
                     <item name="source" xsi:type="string">employee</item>
-                    <item name="dataScope" xsi:type="string">birthDate</item>
+                    <item name="dataScope" xsi:type="string">birthdate</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                         <item name="validate-date" xsi:type="boolean">true</item>
-                        <item name="minimum-age" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="home">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Address</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">home</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="phone">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Phone</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">phone</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="family">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">
+                    Nttdata\Company\Model\Config\Source\OptionsFamilyGroup</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Family</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">family</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
                 </item>
             </argument>
         </field>
 
-        <field name="id_typeEmployee">
+        <field name="studies">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Nttdata\Company\Model\Config\Source\OptionsType</item>
+                <item name="options" xsi:type="object">
+                    Nttdata\Company\Model\Config\Source\OptionsStudies</item>
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Type</item>
-                    <item name="component" xsi:type="string">Nttdata_Company/js/form/element/optionsSector</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Studies</item>
                     <item name="formElement" xsi:type="string">select</item>
-                    <item name="source" xsi:type="string">item</item>
-                    <item name="dataScope" xsi:type="string">id_typeEmployee</item>
-                    <item name="sortOrder" xsi:type="number">100</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">studies</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
@@ -124,7 +166,124 @@
             </argument>
         </field>
         
-        <field name="id_sectorEmployee">
+        <field name="worktime">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">
+                    Nttdata\Company\Model\Config\Source\OptionsWorkTime</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Work Time</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">worktime</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="seniority">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">
+                    Nttdata\Company\Model\Config\Source\OptionsSeniority</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Seniority</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">seniority</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="typecontract">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">
+                    Nttdata\Company\Model\Config\Source\OptionsTypeContract</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Type Contract</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">typecontract</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="admissiondate">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">
+                        Nttdata_Company/js/form/element/disable-admissiondate</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Admission Date</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">admissiondate</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-date" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="dischargedate">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Discharge Date</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">employee</item>
+                    <item name="dataScope" xsi:type="string">dischargedate</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="validate-date" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="idsocialwork">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">
+                    Nttdata\Company\Model\Config\Source\OptionsSocialWork</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Social Work</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">item</item>
+                    <item name="dataScope" xsi:type="string">idsocialwork</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="idtype">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">
+                    Nttdata\Company\Model\Config\Source\OptionsType</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Type</item>
+                    <item name="component" xsi:type="string">
+                        Nttdata_Company/js/form/element/optionsSector</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">item</item>
+                    <item name="dataScope" xsi:type="string">idtype</item>
+                    <item name="sortOrder" xsi:type="number">100</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="idsector">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">Sector</item>
@@ -133,7 +292,7 @@
                     <item name="source" xsi:type="string">item</item>
                     <item name="sortOrder" xsi:type="number">110</item>
                     <item name="breakLine" xsi:type="boolean">true</item>
-                    <item name="dataScope" xsi:type="string">id_sectorEmployee</item>
+                    <item name="dataScope" xsi:type="string">idsector</item>
                     <item name="visible" xsi:type="boolean">false</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>

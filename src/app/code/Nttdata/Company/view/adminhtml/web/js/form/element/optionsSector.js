@@ -14,8 +14,8 @@ define([
          * @param {String} value
          */
         onUpdate: function (value) {
-            var field1 = uiRegistry.get('index = id_typeEmployee');
-            var field2 = uiRegistry.get('index = id_sectorEmployee');
+            var field1 = uiRegistry.get('index = idtype');
+            var field2 = uiRegistry.get('index = idsector');
 
             field2.options([]);
 

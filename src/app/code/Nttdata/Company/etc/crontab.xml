@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="nttdata_employee_holidays_calculate" instance="Nttdata\Company\Cron\HolidaysCalculate" method="execute">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+</config>
+
+<!-- 
+    0: Los minutos (0-59).
+    0: Las horas (0-23).
+    *: Los días del mes (1-31).
+    *: Los meses (1-12).
+    *: Los días de la semana (0-6, 0 es domingo)
+-->

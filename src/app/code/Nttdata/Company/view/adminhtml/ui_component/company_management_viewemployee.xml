@@ -1,0 +1,11 @@
+
+        <actionsColumn name="actions"
+            class="Nttdata\Company\Ui\Component\Column\ViewEmployeeActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

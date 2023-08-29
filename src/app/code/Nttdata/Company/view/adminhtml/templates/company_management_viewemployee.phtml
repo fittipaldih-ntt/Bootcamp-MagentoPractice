@@ -1,0 +1,104 @@
+<?php
+$employee = $block->getEmployeeData();
+?>
+
+<section class="admin__page-section order-view-account-information">
+
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__(' Employee Details (Id #%1)', $block->escapeHtml($employee['id']))) ?></span>
+    </div>
+
+    <div class="admin__page-left">
+        <div class="admin__page-section order-information">
+            <div class="admin__page-section-item-title">
+                <span class="title"><?= $block->escapeHtml(__('Employee Information')) ?></span>
+            </div>
+            <div class="admin__page-section-content">
+                <table class="admin__table-secondary order-information-table">
+                    <tbody>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Name')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['name']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Last Name')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['lastname']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Age')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['age'] . ' years'); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Birth Date')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['birthdate']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Phone')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['phone']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Address')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['home']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Family')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['family']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Studies')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['studies']); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin__page-right">
+        <div class="admin__page-section order-information">
+            <div class="admin__page-section-item-title">
+                <span class="title"><?= $block->escapeHtml(__('Job Information')) ?></span>
+            </div>
+            <div class="admin__page-section-content">
+                <table class="admin__table-secondary order-account-information-table">
+                    <tbody>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Admission Date')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['admission']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Discharge Date')) ?></th>
+                            <td><?php echo $employee['discharge'] ? $employee['dischargeDate'] : 'Not apply'; ?></td>
+                        </tr>
+
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Work Time')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['worktime']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Seniority')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['seniority']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Type Contract')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['contract']); ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Position')) ?></strong></th>
+                            <td><?= "{$employee['type']} {$employee['sector']}"; ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Social Work')) ?></strong></th>
+                            <td><?= "{$employee['socialwork']} {$employee['socialworkplan']}"; ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong><?= $block->escapeHtml(__('Holidays')) ?></strong></th>
+                            <td><?= $block->escapeHtml($employee['holidays'] . ' days'); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</section>

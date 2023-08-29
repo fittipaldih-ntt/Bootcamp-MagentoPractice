@@ -1,38 +1,78 @@
 <?xml version="1.0"?>
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-    <table name="nttdata_company_employee" resource="default" engine="innodb" comment="Employee Table">
-        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
-        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name employee"/>
-        <column xsi:type="varchar" name="lastName" nullable="false" length="255" comment="Last name employee"/>
-        <column xsi:type="date" name="birthDate" nullable="true" comment="Birth employee"/>
-        <column xsi:type="int" name="id_typeEmployee" unsigned="true" nullable="false" comment="Type employee id"/>
-        <column xsi:type="int" name="id_sectorEmployee" unsigned="true" nullable="false" comment="Sector employee id"/>
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="nttdata_company_employee" resource="default" engine="innodb"
+        comment="Employee Table">
+        <column xsi:type="int"          name="id"   padding="10" unsigned="true" nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar"      name="name" nullable="false" length="160" comment="Name employee" />
+        <column xsi:type="varchar"      name="lastname" nullable="false" length="160" comment="Last name employee" />
+        <column xsi:type="date"         name="birthdate" nullable="false" comment="Birth employee" />
+        <column xsi:type="varchar"      name="home" nullable="false" length="255" comment="home" />
+        <column xsi:type="int"          name="phone" unsigned="true" nullable="false" comment="number phone" />
+        <column xsi:type="varchar"      name="family" nullable="false" length="100" comment="family group" />
+        <column xsi:type="varchar"      name="studies" nullable="false" length="100" comment="academic training" />
+        <column xsi:type="date"         name="admissiondate" nullable="false" comment="Admission employee" />
+        <column xsi:type="date"         name="dischargedate" nullable="true" comment="Discharge employee" />
+        <column xsi:type="varchar"      name="worktime" nullable="false" length="100" />
+        <column xsi:type="varchar"      name="seniority" nullable="false" length="100" />
+        <column xsi:type="varchar"      name="typecontract" nullable="false" comment="Type of contract" />
+        <column xsi:type="int"          name="idsocialwork" unsigned="true" nullable="false" comment="Socialwork employee id" />
+        <column xsi:type="int"          name="idtype" unsigned="true" nullable="false" comment="Type employee id" />
+        <column xsi:type="int"          name="idsector" unsigned="true" nullable="false" comment="Sector employee id" />
+        <column xsi:type="int"          name="holidays" unsigned="true" nullable="false" comment="holidays employee" />
+
         <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="id"/>
+            <column name="id" />
         </constraint>
-        <constraint xsi:type="foreign" referenceId="FK_NTTDATA_EMPLOYEE_TYPE_EMPLOYEE" table="nttdata_company_employee"
-                    column="id_typeEmployee" referenceTable="nttdata_company_type_employee" referenceColumn="id"
-                    onDelete="CASCADE"/>
+
+        <constraint xsi:type="foreign" referenceId="FK_NTTDATA_EMPLOYEE_TYPE_EMPLOYEE"
+            table="nttdata_company_employee"
+            column="idtype" 
+            referenceTable="nttdata_company_type_employee"
+            referenceColumn="id"
+            onDelete="CASCADE" />
+
         <constraint xsi:type="foreign" referenceId="FK_NTTDATA_EMPLOYEE_SECTOR_EMPLOYEE"
-                    table="nttdata_company_employee" column="id_sectorEmployee"
-                    referenceTable="nttdata_company_sector_employee" referenceColumn="id" onDelete="CASCADE"/>
+            table="nttdata_company_employee" 
+            column="idsector"
+            referenceTable="nttdata_company_sector_employee" 
+            referenceColumn="id" 
+            onDelete="CASCADE" />
+
+        <constraint xsi:type="foreign" referenceId="FK_NTTDATA_EMPLOYEE_SOCIALWORK_EMPLOYEE"
+            table="nttdata_company_employee" 
+            column="idsocialwork"
+            referenceTable="nttdata_company_socialwork_employee" 
+            referenceColumn="id"
+            onDelete="CASCADE" />
     </table>
 
     <table name="nttdata_company_type_employee" resource="default" engine="innodb" comment="Type Employee Table">
-        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
-        <column xsi:type="varchar" name="description" nullable="true" length="255" comment="Description type employee"/>
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar" name="description" nullable="true" length="160" comment="Description type employee" />
+        
         <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="id"/>
+            <column name="id" />
         </constraint>
     </table>
 
     <table name="nttdata_company_sector_employee" resource="default" engine="innodb" comment="Sector Employee Table">
-        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
-        <column xsi:type="varchar" name="description" nullable="true" length="255"
-                comment="Programming Language or Type of design"/>
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar" name="description" nullable="true" length="160" comment="Programming Language or Type of design" />
+        
         <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="id"/>
+            <column name="id" />
         </constraint>
     </table>
+
+    <table name="nttdata_company_socialwork_employee" resource="default" engine="innodb" comment="Social Work Employee Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar" name="description" nullable="false" length="160" comment="Description social work" />
+        <column xsi:type="varchar" name="plan" nullable="false" length="160" comment="Plan social work" />
+       
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+
 </schema>

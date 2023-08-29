@@ -2,14 +2,14 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="Nttdata_Company/css/customEmployee.css" />
+         <!--<css src="Nttdata_Company/css/customEmployee.css" />-->
         <script src="Nttdata_Company/js/customEmployee.js" />
     </head>
     <body>
         <referenceContainer name="content">
             <block class="Magento\Backend\Block\Template"
                 template="Nttdata_Company::company_management_index.phtml" />
-            <uiComponent name="company_management_employees" />
+            <uiComponent name="company_management_index" />
         </referenceContainer>
     </body>
 </page>

@@ -11,15 +11,15 @@ class Generic
     protected $pageRepository;
 
     public function __construct(
-        Context $context,
+        Context                 $context,
         PageRepositoryInterface $pageRepository
     ) {
-        $this->context = $context;
-        $this->pageRepository = $pageRepository;
+        $this -> context        =  $context;
+        $this -> pageRepository =  $pageRepository;
     }
 
     public function getUrl($route = '', $params = [])
     {
-        return $this->context->getUrlBuilder()->getUrl($route, $params);
+        return $this -> context -> getUrlBuilder() -> getUrl ($route, $params);
     }
 }

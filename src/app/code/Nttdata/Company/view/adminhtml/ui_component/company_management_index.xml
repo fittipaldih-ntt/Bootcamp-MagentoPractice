@@ -5,9 +5,9 @@
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">
-                company_management_employees.company_management_employees_data_source</item>
+                company_management_index.company_management_index_data_source</item>
             <item name="deps" xsi:type="string">
-                company_management_employees.company_management_employees_data_source</item>
+                company_management_index.company_management_index_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">nttdata_company_employee</item>
         <item name="buttons" xsi:type="array">
@@ -26,11 +26,11 @@
         </item>
     </argument>
 
-    <dataSource name="company_management_employees_data_source">
+    <dataSource name="company_management_index_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">
-                Nttdata\Company\Ui\DataProvider\EmployeesDataProvider</argument>
-            <argument name="name" xsi:type="string">company_management_employees_data_source</argument>
+                Nttdata\Company\Ui\DataProvider\EmployeesIndexDataProvider</argument>
+            <argument name="name" xsi:type="string">company_management_index_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
 
@@ -63,7 +63,7 @@
                     </confirm>
                     <type>delete</type>
                     <url path="*/*/massDelete" />
-                    <label translate="true">Delete</label>
+                    <label translate="true">Mass Delete</label>
                 </settings>
             </action>
 
@@ -132,7 +132,7 @@
             </settings>
         </column>
 
-        <column name="lastName">
+        <column name="lastname">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -142,7 +142,7 @@
             </argument>
         </column>
 
-        <column name="birthDate">
+        <column name="birthdate">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">dateRange</item>
@@ -162,15 +162,7 @@
             </argument>
         </column>
 
-        <column name="id_typeEmployee">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Type Id</item>
-                </item>
-            </argument>
-        </column>
-        <column name="type_description">
+        <column name="typedescription">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -178,16 +170,8 @@
                 </item>
             </argument>
         </column>
-        <column name="id_sectorEmployee">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">Sector Id</item>
-                </item>
-            </argument>
-        </column>
-        <column name="sector_description">
+
+        <column name="sectordescription">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -197,10 +181,51 @@
             </argument>
         </column>
 
-        <actionsColumn name="actions"
-            class="Nttdata\Company\Ui\Component\Column\EmployeeActions">
+        <column name="admissiondate">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Admission Date</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="typecontract">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Type Contract</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="socialworkdescription">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Social Work</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="phone">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Phone</item>
+                </item>
+            </argument>
+        </column>
+
+        <actionsColumn name="actions"
+            class="Nttdata\Company\Ui\Component\Column\IndexEmployeeActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">More info</item>
                     <item name="indexField" xsi:type="string">id</item>
                 </item>
             </argument>

@@ -8,11 +8,12 @@ use Magento\Framework\View\Result\PageFactory;
 
 class CreateEmployee extends Action
 {
-    protected $resultPageFactory = false;
+    protected $resultPageFactory;
 
     public function __construct(
-        Context $context, PageFactory $resultPageFactory)
-    {
+        Context     $context,
+        PageFactory $resultPageFactory
+    ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
     }

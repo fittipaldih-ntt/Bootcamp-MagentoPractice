@@ -12,13 +12,13 @@ class Save extends Generic implements ButtonProviderInterface
             'label' => __('Save'),
             'class' => 'save primary',
             'data_attribute' => [
-                'mage-init' => [
+                'mage-init'  => [
                     'buttonAdapter' => [
-                        'actions' => [
+                        'actions'   => [
                             [
                                 'targetName' => 'company_management_createemployee_form.company_management_createemployee_form',
                                 'actionName' => 'save',
-                                'params' => [
+                                'params'     => [
                                     false,
                                 ],
                             ],

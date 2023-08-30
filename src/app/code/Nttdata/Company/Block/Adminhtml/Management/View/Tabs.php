@@ -34,16 +34,9 @@ class Tabs extends \Magento\Backend\Block\Widget\Tabs
             [
                 'label'     => __('Details'),
                 'title'     => __('Employee Information'),
-                'content'   => $this->getLayout()->createBlock('Nttdata\Company\Block\Adminhtml\Management\View\Tab\Info')->setTemplate('Nttdata_Company::company_management_viewemployee.phtml')->toHtml(),
+                'content'   => $this->getLayout()->createBlock('Nttdata\Company\Block\Adminhtml\Management\View\Tab\Info')
+                    ->setTemplate('Nttdata_Company::company_management_viewemployee.phtml')->toHtml(),
                 'active'    => true
-            ]
-        );
-
-        $this->addTab(
-            'other',
-            [
-                'label'     => __('Other'),
-                'content'   => 'Probando que cambia de tab correctamente',
             ]
         );
         return parent::_prepareLayout();

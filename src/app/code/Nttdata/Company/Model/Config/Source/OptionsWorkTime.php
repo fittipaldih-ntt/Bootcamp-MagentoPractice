@@ -15,23 +15,23 @@ class OptionsWorkTime implements OptionSourceInterface
         $options = [
             [
                 'value' => '',
-                'label' => 'Please Select'
+                'label' => __('Please select')
             ],
             [
                 'value' => 'Parttime',
-                'label' => 'Part-time'
+                'label' => __('Parttime')
             ],
             [
                 'value' => 'Fulltime',
-                'label' => 'Full-time'
+                'label' => __('Fulltime')
             ],
             [
                 'value' => 'Freelance',
-                'label' => 'Freelance'
+                'label' => __('Freelance')
             ],
         ];
-            
+
         return $options;
     }
-    
+
 }

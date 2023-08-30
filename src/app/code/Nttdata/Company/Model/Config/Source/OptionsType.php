@@ -12,7 +12,7 @@ class OptionsType implements OptionSourceInterface
     public function __construct(\Nttdata\Company\Model\ResourceModel\TypeEmployee\CollectionFactory $collection){
         $this->collection = $collection;
     }
- 
+
     /**
      * @return array
      */
@@ -21,20 +21,20 @@ class OptionsType implements OptionSourceInterface
         $options = [
             [
                 'value' => '',
-                'label' => 'Please Select'
+                'label' => __('Please select')
             ]
         ];
-        
+
         $items = $this->collection->create();
-    
+
         foreach ($items as $i) {
             $options[] = [
                 'value' => $i->getId(),
-                'label' => $i->getDescription()
+                'label' => __($i->getDescription())
             ];
         }
-    
+
         return $options;
     }
-    
+
 }

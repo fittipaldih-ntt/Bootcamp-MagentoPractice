@@ -3,14 +3,12 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block
-                class="Nttdata\Company\Block\Adminhtml\Management\View"
+            <block class="Nttdata\Company\Block\Adminhtml\Management\View"
                 name="company_viewemployee_content" />
         </referenceContainer>
 
         <referenceContainer name="left">
-            <block
-                class="Nttdata\Company\Block\Adminhtml\Management\View\Tabs"
+            <block class="Nttdata\Company\Block\Adminhtml\Management\View\Tabs"
                 name="company_viewemployee_tabs" />
         </referenceContainer>
     </body>

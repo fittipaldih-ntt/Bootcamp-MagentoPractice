@@ -33,9 +33,9 @@ class EditEmployee extends Action
         try {
             $model = $this->employeeFactory->load($id);
             if (!$model->getId()) {
-                throw new \Exception(__('Employee with ID %1 does not exist.', $id));
+                throw new \Exception(__('Employee with ID %1 does not exist.'), $id);
             }
-          
+
             $resultPage = $this->resultPageFactory->create();
             $resultPage->getConfig()->getTitle()->prepend((__('Edit employee')));
             return $resultPage;

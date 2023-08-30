@@ -15,27 +15,27 @@ class OptionsSeniority implements OptionSourceInterface
         $options = [
             [
                 'value' => '',
-                'label' => 'Please Select'
+                'label' => __('Please select')
             ],
             [
                 'value' => 'Trainee',
-                'label' => 'Trainee'
+                'label' => __('Trainee')
             ],
             [
                 'value' => 'Junior',
-                'label' => 'Junior'
+                'label' => __('Junior')
             ],
             [
                 'value' => 'Semisenior',
-                'label' => 'Semi-senior'
+                'label' => __('Semi-senior')
             ],
             [
                 'value' => 'Senior',
-                'label' => 'Senior'
+                'label' => __('Senior')
             ],
         ];
-            
+
         return $options;
     }
-    
+
 }

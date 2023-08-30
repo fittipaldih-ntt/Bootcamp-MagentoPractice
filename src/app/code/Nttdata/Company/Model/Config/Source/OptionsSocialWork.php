@@ -12,7 +12,7 @@ class OptionsSocialWork implements OptionSourceInterface
     public function __construct(\Nttdata\Company\Model\ResourceModel\SocialWork\CollectionFactory $collection){
         $this->collection = $collection;
     }
- 
+
     /**
      * @return array
      */
@@ -21,20 +21,20 @@ class OptionsSocialWork implements OptionSourceInterface
         $options = [
             [
                 'value' => '',
-                'label' => 'Please Select'
+                'label' => __('Please select')
             ]
         ];
-        
+
         $items = $this->collection->create();
-    
+
         foreach ($items as $i) {
             $options[] = [
                 'value' => $i->getId(),
                 'label' => $i->getDescription() . ' ' . $i->getPlan()
             ];
         }
-    
+
         return $options;
     }
-    
+
 }

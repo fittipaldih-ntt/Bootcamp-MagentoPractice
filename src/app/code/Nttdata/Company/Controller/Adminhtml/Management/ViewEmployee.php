@@ -37,7 +37,7 @@ class ViewEmployee extends Action
         try {
             $model = $this->employeeFactory->load($id);
             if (!$model->getId()) {
-                throw new \Exception(__('Employee with ID %1 does not exist.', $id));
+                throw new \Exception(__('Employee with ID %1 does not exist.'), $id);
             }
             $resultPage = $this->resultPageFactory->create();
             $resultPage->getConfig()->getTitle()->prepend((__('View employee')));
@@ -45,7 +45,6 @@ class ViewEmployee extends Action
         } catch (\Exception $e) {
             $this->logger->critical($e);
             $this->messageManager->addExceptionMessage($e, $e->getMessage());
-          //$this->messageManager->addExceptionMessage($e, __('An error occurred.'));
             return $this->_redirect('*/*/');
         }
     }

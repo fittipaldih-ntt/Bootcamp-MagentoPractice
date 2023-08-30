@@ -20,7 +20,7 @@ class AverageAge extends Action
         $averageAge = (int)$this->_getSession()->getData('averageAge');
 
         if ($averageAge > 0) {
-            $this->messageManager->addSuccessMessage(__('Total employees average age: ' . $averageAge));
+            $this->messageManager->addSuccessMessage(__('Total employees average age: ') . $averageAge);
             $this->_getSession()->unsetData('averageAge');
         }
         $resultRedirect = $this->resultRedirectFactory->create();

@@ -15,27 +15,27 @@ class OptionsStudies implements OptionSourceInterface
         $options = [
             [
                 'value' => '',
-                'label' => 'Please Select'
+                'label' => __('Please select')
             ],
             [
-                'value' => 'Secundario',
-                'label' => 'Secundario'
+                'value' => 'Secondary',
+                'label' => __('Secondary')
             ],
             [
-                'value' => 'Terciario',
-                'label' => 'Terciario'
+                'value' => 'Tertiary',
+                'label' => __('Tertiary')
             ],
             [
-                'value' => 'Universitario',
-                'label' => 'Universitario'
+                'value' => 'Academic',
+                'label' => __('Academic')
             ],
             [
-                'value' => 'Autodidacta',
-                'label' => 'Autodidacta'
+                'value' => 'Autodidact',
+                'label' => __('Autodidact')
             ],
         ];
-            
+
         return $options;
     }
-    
+
 }

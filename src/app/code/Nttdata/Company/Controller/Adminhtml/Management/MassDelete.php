@@ -61,7 +61,7 @@ class MassDelete extends Action
             $this->messageManager->addSuccessMessage(__('Employees deleted.'));
         } elseif (!empty($selected)) {
             $count = count($selected);
-            $this->messageManager->addSuccessMessage(__('%1 employees deleted.', $count));
+            $this->messageManager->addSuccessMessage(__('%1 employees deleted.'), $count);
         }
     }
 

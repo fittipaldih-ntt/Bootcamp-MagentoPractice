@@ -66,7 +66,7 @@ class MassAverageAge extends Action
 
     protected function addSuccessMessage($averageAge)
     {
-        $this->messageManager->addSuccessMessage(__('Selected employees average age: ' . (int)($averageAge)));
+        $this->messageManager->addSuccessMessage(__('Selected employees average age: ') . (int)($averageAge));
     }
 
     protected function addErrorMessage($message)

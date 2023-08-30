@@ -15,23 +15,23 @@ class OptionsTypeContract implements OptionSourceInterface
         $options = [
             [
                 'value' => '',
-                'label' => 'Please Select'
+                'label' => __('Please select')
             ],
             [
-                'value' => 'Permanente',
-                'label' => 'Permanente'
+                'value' => 'Permanent',
+                'label' => __('Permanent')
             ],
             [
-                'value' => 'Contrato',
-                'label' => 'Contrato'
+                'value' => 'Contract',
+                'label' => __('Contract')
             ],
             [
-                'value' => 'Externo',
-                'label' => 'Externo'
+                'value' => 'External',
+                'label' => __('External')
             ],
         ];
-            
+
         return $options;
     }
-    
+
 }

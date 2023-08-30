@@ -15,19 +15,19 @@ class OptionsFamilyGroup implements OptionSourceInterface
         $options = [
             [
                 'value' => '',
-                'label' => 'Please Select'
+                'label' => __('Please select')
             ],
             [
-                'value' => 'Soltero',
-                'label' => 'Soltero'
+                'value' => 'Single',
+                'label' => __('Single')
             ],
             [
-                'value' => 'Casado',
-                'label' => 'Casado'
+                'value' => 'Married',
+                'label' => __('Married')
             ],
         ];
-            
+
         return $options;
     }
-    
+
 }

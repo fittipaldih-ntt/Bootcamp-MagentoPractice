@@ -8,5 +8,10 @@
                 <argument name="logo_alt" xsi:type="string">Logo Test</argument>
             </arguments>
         </referenceBlock>
+
+        <referenceContainer name="footer-bottom-content">
+            <block class="Magento\Framework\View\Element\Template" name="custom-double-footer" template="Magento_Theme::custom_footer.phtml"/>
+        </referenceContainer>
+
     </body>
 </page>

@@ -1,0 +1,15 @@
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+
+        <move element="product.info.review" destination="product.info.main" after="product.info.price" />
+        
+        <!-- Remueve el boton de comparacion -->
+        <referenceBlock name="view.addto.compare" remove="true" />
+        <!-- Mueve Add to wish list -->
+        <move element="product.info.social" destination="product.info.main" before="product.info.review"/>
+        
+    </body>
+</page>

@@ -2,10 +2,7 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
 
-        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
-
         <move element="product.info.review" destination="product.info.main" after="product.info.price" />
-        
         <!-- Remueve el boton de comparacion -->
         <referenceBlock name="view.addto.compare" remove="true" />
         <!-- Mueve Add to wish list -->

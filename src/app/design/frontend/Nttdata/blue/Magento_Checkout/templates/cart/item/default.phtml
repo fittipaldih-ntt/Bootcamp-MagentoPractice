@@ -90,6 +90,7 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                 </span>
         </td>
     <?php else: ?>
+        <!-- Ejercicio 3.1 Cross-site scripting: Ejemplo donde se utiliza correctamente $escaper para prevenir ataques XSS aqui-->
         <td class="col qty" data-th="<?= $block->escapeHtml(__('Qty')) ?>">
             <div class="field qty">
                 <div class="control qty">

@@ -58,6 +58,7 @@
     </div>
     <div class="cart main actions">
         <?php if ($block->getContinueShoppingUrl()): ?>
+        <!-- Ejercicio 3.1 Cross-site scripting: Ejemplo donde se utiliza correctamente $escaper para prevenir ataques XSS aqui-->
             <a class="action continue"
                href="<?= $block->escapeUrl($block->getContinueShoppingUrl()) ?>"
                title="<?= $block->escapeHtml(__('Continue Shopping')) ?>">

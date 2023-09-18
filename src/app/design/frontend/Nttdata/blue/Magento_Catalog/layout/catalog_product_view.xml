@@ -7,6 +7,11 @@
         <referenceBlock name="view.addto.compare" remove="true" />
         <!-- Mueve Add to wish list -->
         <move element="product.info.social" destination="product.info.main" before="product.info.review"/>
-        
+
+        <!-- Ejercicio 7.1 Acordion-->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.sticky" template="Magento_Catalog::product/view/sticky.phtml" />
+        </referenceContainer>
+
     </body>
 </page>

@@ -10,7 +10,12 @@
 
         <!-- Ejercicio 7.1 Acordion-->
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="custom.sticky" template="Magento_Catalog::product/view/sticky.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="custom.accordion" template="Magento_Catalog::product/view/accordion.phtml" />
+        </referenceContainer>
+
+        <!-- Ejercicio 7.1 Ejemplo bonus Carousel imperativo-->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.carousel.imperative" template="Magento_Catalog::product/view/carousel-imperative.phtml" />
         </referenceContainer>
 
     </body>

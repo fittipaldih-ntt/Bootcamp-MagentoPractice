@@ -8,14 +8,14 @@
         <!-- Mueve Add to wish list -->
         <move element="product.info.social" destination="product.info.main" before="product.info.review"/>
 
-        <!-- Ejercicio 7.1 Acordion-->
+        <!-- Ejercicio 7.1 Acordion -->
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\Template" name="custom.accordion" template="Magento_Catalog::product/view/accordion.phtml" />
         </referenceContainer>
 
-        <!-- Ejercicio 7.1 Ejemplo bonus Carousel imperativo-->
+        <!-- Ejercicio 7.1 Ejemplo Bonus Carousel imperativo y declarativo -->
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="custom.carousel.imperative" template="Magento_Catalog::product/view/carousel-imperative.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="custom.carousel" template="Magento_Catalog::product/view/carousel.phtml" />
         </referenceContainer>
 
     </body>

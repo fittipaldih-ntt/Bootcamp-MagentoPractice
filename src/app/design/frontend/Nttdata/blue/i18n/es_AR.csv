@@ -7,6 +7,7 @@
 "Enter discount code", "Ingresar código"
 "Enter your destination to get a shipping estimate.", "Ingrese su destino para obtener una estimación de envío."
 "Estimate Shipping and Tax", "Estimar gastos de envío e impuestos"
+"Hello, this is a personalized email test with ntt data.", "Hola, esta es una prueba de correo electrónico personalizada con datos ntt."
 "Item", "Articulo"
 "More Choices:", "Más opciones:"
 "Order Total", "Total del pedido"
@@ -20,3 +21,4 @@
 "Summary", "Resumen"
 "Update Shopping Cart","Actualizar carrito"
 "Zip/Postal Code", "Código postal"
+"Hello", "Hola"

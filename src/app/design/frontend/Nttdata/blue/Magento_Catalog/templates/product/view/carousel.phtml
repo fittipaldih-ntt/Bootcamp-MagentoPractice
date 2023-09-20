@@ -1,0 +1,71 @@
+<div class="car-images"></div>
+<script>
+    require(['jquery', 'mage/gallery/gallery'], function ($, Gallery) {
+        $(function () {
+            $('.car-images').each(function (index, element) {
+                Gallery({
+                    options: {
+                        "autoplay": true,
+                        "loop": true,
+                    },
+                    data: [
+                        {img: "https://autotest.com.ar/wp-content/uploads/2021/08/FORD-FOCUS-ST-EDITION-2021.jpg"},
+                        {img: "https://autotest.com.ar/wp-content/uploads/2023/08/Ford-Ranger-Limited-2023-19.jpg"},
+                        {img: "https://autotest.com.ar/wp-content/uploads/2022/07/Ford-Maverick-Trompa-2.jpg"},
+                        {img: "https://autotest.com.ar/wp-content/uploads/2023/09/RAM-1500-Rebel-trompa.jpg"},
+                        {img: "https://autotest.com.ar/wp-content/uploads/2022/12/IKA-Renault-Torino-frente.jpg"}
+                    ],
+                }, element);
+            });
+        });
+    });
+</script>
+
+<div class="car-images-imperative">
+    <ul class="list">
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2021/08/FORD-FOCUS-ST-EDITION-2021.jpg" alt="Image 1">
+        </li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2023/08/Ford-Ranger-Limited-2023-19.jpg" alt="Image 2">
+        </li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2022/07/Ford-Maverick-Trompa-2.jpg" alt="Image 3"></li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2023/09/RAM-1500-Rebel-trompa.jpg" alt="Image 4"></li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2022/12/IKA-Renault-Torino-frente.jpg" alt="Image 5">
+        </li>
+    </ul>
+</div>
+<script>
+    require(['jquery', 'slick'], function ($) {
+        $(document).ready(function () {
+            $(".list").slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            });
+        });
+    });
+</script>
+
+<div class="car-images-declarative">
+    <ul class="lists" data-mage-init=
+        '{"slick":
+            {
+            "dots": true,
+            "infinite": true,
+            "speed": 300,
+            "slidesToShow": 3,
+            "slidesToScroll": 1
+            }
+        }'>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2021/08/FORD-FOCUS-ST-EDITION-2021.jpg" alt="Image 1">
+        </li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2023/08/Ford-Ranger-Limited-2023-19.jpg" alt="Image 2">
+        </li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2022/07/Ford-Maverick-Trompa-2.jpg" alt="Image 3"></li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2023/09/RAM-1500-Rebel-trompa.jpg" alt="Image 4"></li>
+        <li><img src="https://autotest.com.ar/wp-content/uploads/2022/12/IKA-Renault-Torino-frente.jpg" alt="Image 5">
+        </li>
+    </ul>
+</div>
+

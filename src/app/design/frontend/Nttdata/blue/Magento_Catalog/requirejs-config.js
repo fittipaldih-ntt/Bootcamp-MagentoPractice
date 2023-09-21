@@ -11,7 +11,7 @@ var config = {
 
     map: {
         "*": {
-            "accordion": "Magento_Catalog/js/accordion"
+            "accordionJS": "Magento_Catalog/js/accordion",
         }
     }
 

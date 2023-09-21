@@ -18,5 +18,14 @@
             <block class="Magento\Framework\View\Element\Template" name="custom.carousel" template="Magento_Catalog::product/view/carousel.phtml" />
         </referenceContainer>
 
+        <!-- Ejercicio 7.3 Modal -->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.modal" template="Magento_Catalog::product/view/modal.phtml" />
+        </referenceContainer>
+
+        <!-- Ejercicio 7.3 Multiselect -->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.multiselect" template="Magento_Catalog::product/view/multiselect.phtml" />
+        </referenceContainer>
     </body>
 </page>

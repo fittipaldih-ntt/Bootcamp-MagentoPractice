@@ -27,5 +27,19 @@
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\Template" name="custom.multiselect" template="Magento_Catalog::product/view/multiselect.phtml" />
         </referenceContainer>
+
+        <!-- Ejercicio 8.1 - Block CMS Desde PHTML-->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.testcmsphtml" template="Magento_Catalog::product/view/blockcms.phtml" />
+        </referenceContainer>
+
+        <!-- Ejercicio 8.1 - Block CMS Directo de XML-->
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="custom.testcmsxml" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">testcms</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
     </body>
 </page>

@@ -1,0 +1,7 @@
+<h4> Ejercicio 8.1 - Block CMS:</h4>
+<?=
+$block->getLayout()
+    ->createBlock(Magento\Cms\Block\Block::class)
+    ->setBlockId('testcms')
+    ->toHtml();
+?>
